@@ -1,13 +1,10 @@
-import { Box, Card, Flex, Heading } from "@radix-ui/themes";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import { Box, Card, Flex } from "@radix-ui/themes";
+import { Skeleton } from "@/app/components";
 
-const loading = () => {
+const LoadingIssueDetailPage = () => {
   return (
     <Box maxWidth={"xl"}>
-      <Heading>
-        <Skeleton />
-      </Heading>
+      <Skeleton />
       <Flex gap={"3"} my={"2"}>
         <Skeleton width={"5rem"} />
         <Skeleton width={"8rem"} />
@@ -19,4 +16,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default LoadingIssueDetailPage;
