@@ -1,5 +1,5 @@
 import { Table } from "@radix-ui/themes";
-import IssuesToolbar from "./IssuesToolbar";
+import IssuesToolbar from "./_components/IssuesToolbar";
 import { Skeleton } from "@/app/components";
 
 const loading = () => {
