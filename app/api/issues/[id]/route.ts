@@ -92,7 +92,7 @@ export async function DELETE(
       message: `Issue ${id} deleted successfully`,
     },
     {
-      status: 418,
+      status: 200,
     }
   );
 }
