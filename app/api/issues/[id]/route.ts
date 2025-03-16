@@ -58,3 +58,41 @@ export async function PATCH(
     }
   );
 }
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+  const issue = await prisma.issue.findUnique({
+    where: {
+      id: parseInt(id),
+    },
+  });
+
+  if (!issue) {
+    return NextResponse.json(
+      {
+        message: `Issue ${id} not found`,
+      },
+      {
+        status: 404,
+      }
+    );
+  }
+
+  await prisma.issue.delete({
+    where: {
+      id: issue.id,
+    },
+  });
+
+  return NextResponse.json(
+    {
+      message: `Issue ${id} deleted successfully`,
+    },
+    {
+      status: 418,
+    }
+  );
+}
