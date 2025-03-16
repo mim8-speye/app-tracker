@@ -53,7 +53,6 @@ const IssueDetailPage = async ({ params }: Props) => {
             sm: "start",
           }}
           gap={"2"}
-          width={"100%"}
         >
           <AssigneeSelect />
           <EditIssueButton issueId={issue.id} />
