@@ -53,9 +53,7 @@ const IssueDetailPage = async ({ params }: Props) => {
         <Box>
           <EditIssueButton issueId={issue.id} />
         </Box>
-        <Box>
-          <DeleteIssueButton issueId={issue.id} />
-        </Box>
+        <DeleteIssueButton issueId={issue.id} />
       </Flex>
     </Grid>
   );
