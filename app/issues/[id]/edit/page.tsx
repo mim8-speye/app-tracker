@@ -4,7 +4,7 @@ import React from "react";
 import IssueForm from "../../_components/IssueForm";
 
 interface EditPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 const EditPage = async ({ params }: EditPageProps) => {

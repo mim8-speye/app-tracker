@@ -1,10 +1,10 @@
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
-import "./theme-config.css";
-import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import NavBar from "./NavBar";
+import "./theme-config.css";
 
 /* const roboto = Roboto({
   variable: "--font-roboto",
