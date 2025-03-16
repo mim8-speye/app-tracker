@@ -1,10 +1,9 @@
 "use client";
+import { Skeleton } from "@/app/components";
 import { User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect } from "react";
-import { Skeleton } from "@/app/components";
 
 const IssueSelect = () => {
   const {
