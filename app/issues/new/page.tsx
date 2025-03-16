@@ -1,8 +1,8 @@
 import React from "react";
-import IssueForm from "../_components/IssueForm";
+import ClientIssueForm from "../_components/ClientIssueForm";
 
 const NewIssuePage = () => {
-  return <IssueForm />;
+  return <ClientIssueForm />;
 };
 
 export default NewIssuePage;

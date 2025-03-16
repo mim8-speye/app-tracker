@@ -1,7 +1,7 @@
 import { prisma } from "@/prisma/client";
 import { notFound } from "next/navigation";
 import React from "react";
-import IssueForm from "../../_components/IssueForm";
+import ClientIssueForm from "../../_components/ClientIssueForm";
 
 interface EditPageProps {
   params: Promise<{ id: string }>;
@@ -20,7 +20,7 @@ const EditPage = async ({ params }: EditPageProps) => {
     notFound();
   }
 
-  return <IssueForm issue={issue} />;
+  return <ClientIssueForm issue={issue} />;
 };
 
 export default EditPage;
