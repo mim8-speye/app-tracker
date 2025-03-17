@@ -6,15 +6,15 @@ import React from "react";
 import NextLink from "next/link";
 import { Issue, Status } from "@prisma/client";
 
-interface Props {
-  param: IssueQuery;
-  issues: Issue[];
-}
-
 export interface IssueQuery {
   status: Status;
   orderBy: keyof Issue;
   page: string;
+}
+
+interface Props {
+  param: IssueQuery;
+  issues: Issue[];
 }
 
 const IssueTable = async ({ param, issues }: Props) => {
