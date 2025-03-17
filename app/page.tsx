@@ -3,6 +3,7 @@ import { LuMessageCircleWarning } from "react-icons/lu";
 import bckgrnd from "@/app/assets/bckgrnd.webp";
 import { Link } from "./components";
 import { Button } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 const HomePage = () => {
   return (
@@ -38,3 +39,9 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export const metadata: Metadata = {
+  title: "App Tracker",
+  description:
+    "Effortlessly manage and track your app issues with our intuitive platform.",
+};
