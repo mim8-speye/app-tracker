@@ -1,39 +1,40 @@
-import { prisma } from "@/prisma/client";
-import IssueSummary from "./IssueSummary";
-import LatestIssues from "./LatestIssues";
-import IssueChart from "./IssueChart";
-import { Flex, Grid } from "@radix-ui/themes";
+import React from "react";
+import { LuMessageCircleWarning } from "react-icons/lu";
+import bckgrnd from "@/app/assets/bckgrnd.webp";
+import { Link } from "./components";
+import { Button } from "@radix-ui/themes";
 
-export default async function Home() {
-  const open = await prisma.issue.count({
-    where: {
-      status: "OPEN",
-    },
-  });
-  const inProgress = await prisma.issue.count({
-    where: {
-      status: "IN_PROGRESS",
-    },
-  });
-  const closed = await prisma.issue.count({
-    where: {
-      status: "CLOSED",
-    },
-  });
-
+const HomePage = () => {
   return (
-    <Grid
-      gap={"5"}
-      columns={{
-        initial: "1",
-        sm: "2",
-      }}
-    >
-      <LatestIssues />
-      <Flex gap={"5"} direction={"column"}>
-        <IssueSummary open={open} inProgress={inProgress} closed={closed} />
-        <IssueChart open={open} inProgress={inProgress} closed={closed} />
-      </Flex>
-    </Grid>
+    <div className="flex flex-col min-h-screen w-full">
+      <header className="flex-grow">
+        <div
+          className="relative bg-cover bg-center w-full h-screen"
+          style={{
+            backgroundImage: `url(${bckgrnd.src})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gray-900 opacity-70 z-10" />
+
+          <div className="relative z-20 flex flex-col justify-center items-center text-center text-white h-screen">
+            <LuMessageCircleWarning className="text-6xl mb-4" />
+            <h1 className="text-4xl font-bold mb-4">Welcome to App Tracker</h1>
+            <p className="text-lg mb-4">
+              Effortlessly manage and track your app issues with our intuitive
+              platform.
+            </p>
+            <Button>
+              <Link href="/dashboard">Get Started</Link>
+            </Button>
+          </div>
+        </div>
+      </header>
+      <footer className="bg-gray-800 text-white text-center py-4">
+        &copy; {new Date().getFullYear()} Speye App Tracker. All rights
+        reserved.
+      </footer>
+    </div>
   );
-}
+};
+
+export default HomePage;
