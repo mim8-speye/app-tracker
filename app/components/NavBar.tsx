@@ -78,7 +78,7 @@ const NavLinks = () => {
   const links = [
     {
       name: "Dashboard",
-      href: "/",
+      href: "/dashboard",
     },
     {
       name: "Issues",
