@@ -34,7 +34,7 @@ const HomePage = () => {
       <footer className="bg-gray-800 text-white text-center py-4">
         &copy; {new Date().getFullYear()} Speye App Tracker. All rights
         reserved.
-        <NextLink href={"/licence"}>Licence</NextLink>
+        <NextLink href={"/license"}>License</NextLink>
       </footer>
     </div>
   );
