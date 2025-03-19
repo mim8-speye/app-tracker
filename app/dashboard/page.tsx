@@ -44,3 +44,5 @@ export const metadata: Metadata = {
   description:
     "Effortlessly manage and track your app issues with our intuitive platform.",
 };
+
+export const dynamic = "force-dynamic";
