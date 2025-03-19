@@ -17,11 +17,12 @@ const statusMap: Record<
 
 const ChangeStatus = ({ issue }: { issue: Issue }) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = React.useState(false);
   const handleChange = (status: string) => {
     const reversedStatusMap = Object.fromEntries(
       Object.entries(statusMap).map(([key, value]) => [value.value, key])
     );
-
+    setIsLoading(true);
     axios
       .patch(`/api/issues/${issue.id}`, {
         status: reversedStatusMap[status],
@@ -29,9 +30,12 @@ const ChangeStatus = ({ issue }: { issue: Issue }) => {
       .then(() => {
         toast.success("Status updated successfully");
         router.refresh();
+        setIsLoading(false);
       })
       .catch(() => {
         toast.error("Couldn't save changes");
+        setIsLoading(false);
+        router.refresh();
       });
   };
 
@@ -40,6 +44,7 @@ const ChangeStatus = ({ issue }: { issue: Issue }) => {
       <Select.Root
         defaultValue={statusMap[issue.status].value}
         onValueChange={handleChange}
+        disabled={isLoading}
       >
         <Select.Trigger />
         <Select.Content>

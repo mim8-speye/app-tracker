@@ -60,8 +60,8 @@ const IssueDetailPage = async ({ params }: Props) => {
           }}
           gap={"2"}
         >
-          <ChangeStatus issue={issue} />
           <AssigneeSelect issue={issue} />
+          <ChangeStatus issue={issue} />
           <EditIssueButton issueId={issue.id} />
           <DeleteIssueButton issueId={issue.id} />
         </Flex>
