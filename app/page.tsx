@@ -2,6 +2,7 @@ import React from "react";
 import { LuMessageCircleWarning } from "react-icons/lu";
 import bckgrnd from "@/app/assets/bckgrnd.webp";
 import { Link } from "./components";
+import NextLink from "next/link";
 import { Button } from "@radix-ui/themes";
 import { Metadata } from "next";
 
@@ -33,6 +34,7 @@ const HomePage = () => {
       <footer className="bg-gray-800 text-white text-center py-4">
         &copy; {new Date().getFullYear()} Speye App Tracker. All rights
         reserved.
+        <NextLink href={"/licence"}>Licence</NextLink>
       </footer>
     </div>
   );
