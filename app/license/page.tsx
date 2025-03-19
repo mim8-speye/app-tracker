@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
@@ -43,6 +44,15 @@ const page = () => {
           https://lucide.dev/license
         </a>
       </div>
+      <footer className="bg-gray-800 text-white text-center py-4 flex justify-evenly align-middle mt-6">
+        <p>
+          &copy; {new Date().getFullYear()} Speye App Tracker. All rights
+          reserved.
+        </p>
+        <Link href="/" className="text-blue-500 underline">
+          Home
+        </Link>
+      </footer>
     </div>
   );
 };

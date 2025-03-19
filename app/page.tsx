@@ -31,9 +31,11 @@ const HomePage = () => {
           </div>
         </div>
       </header>
-      <footer className="bg-gray-800 text-white text-center py-4">
-        &copy; {new Date().getFullYear()} Speye App Tracker. All rights
-        reserved.
+      <footer className="bg-gray-800 text-white text-center py-4 flex justify-evenly align-middle">
+        <p>
+          &copy; {new Date().getFullYear()} Speye App Tracker. All rights
+          reserved.
+        </p>
         <NextLink href={"/license"}>License</NextLink>
       </footer>
     </div>
