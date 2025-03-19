@@ -8,6 +8,8 @@ import { getServerSession } from "next-auth";
 import authOptions from "@/app/api/auth/authOptions";
 import AssigneeSelect from "./AssigneeSelect";
 import { cache } from "react";
+import ChangeStatus from "./ChangeStatus";
+import exp from "constants";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -59,6 +61,7 @@ const IssueDetailPage = async ({ params }: Props) => {
           }}
           gap={"2"}
         >
+          <ChangeStatus issue={issue} />
           <AssigneeSelect issue={issue} />
           <EditIssueButton issueId={issue.id} />
           <DeleteIssueButton issueId={issue.id} />
@@ -79,3 +82,5 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default IssueDetailPage;
+
+export const dynamic = "force-dynamic";
